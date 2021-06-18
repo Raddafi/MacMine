@@ -61,25 +61,6 @@ module.onTouch = function()
 		system.saveUserSettings()
 	end
 
-	window.contentLayout:addChild(GUI.text(1, 1, 0x2D2D2D, localization.wallpaperScreensaver))
-
-	local screensaverChooser = window.contentLayout:addChild(GUI.filesystemChooser(1, 1, 36, 3, 0xE1E1E1, 0x696969, 0xD2D2D2, 0xA5A5A5, userSettings.interfaceScreensaverPath, localization.open, localization.cancel, localization.wallpaperScreensaverPath, "/"))
-	screensaverChooser:setMode(GUI.IO_MODE_OPEN, GUI.IO_MODE_FILE)
-	screensaverChooser:addExtensionFilter(".lua")
-
-	local screensaverSwitch = window.contentLayout:addChild(GUI.switchAndLabel(1, 1, 36, 8, 0x66DB80, 0xE1E1E1, 0xFFFFFF, 0xA5A5A5, localization.wallpaperScreensaverEnabled .. ":", userSettings.interfaceScreensaverEnabled)).switch
-
-	local screensaverSlider = window.contentLayout:addChild(GUI.slider(1, 1, 36, 0x66DB80, 0xE1E1E1, 0xFFFFFF, 0xA5A5A5, 1, 100, userSettings.interfaceScreensaverDelay, false, localization.wallpaperScreensaverDelay .. ": ", " s"))
-	
-	local function save()
-		userSettings.interfaceScreensaverEnabled = screensaverSwitch.state
-		userSettings.interfaceScreensaverPath = screensaverChooser.path
-		userSettings.interfaceScreensaverDelay = screensaverSlider.value
-
-		system.saveUserSettings()
-	end
-
-	screensaverChooser.onSubmit, screensaverSwitch.onStateChanged, screensaverSlider.onValueChanged = save, save, save
 end
 
 --------------------------------------------------------------------------------
