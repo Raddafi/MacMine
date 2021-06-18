@@ -117,7 +117,6 @@ function system.getDefaultUserSettings()
 		
 		tasks = {},
 		dockShortcuts = {
-			filesystem.path(paths.system.applicationAppMarket),
 			filesystem.path(paths.system.applicationMineCodeIDE),
 			filesystem.path(paths.system.applicationFinder),
 			filesystem.path(paths.system.applicationPictureEdit),
