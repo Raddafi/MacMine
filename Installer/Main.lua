@@ -555,7 +555,7 @@ addStage(function()
 			usernameInput.text,
 			localizationComboBox:getItem(localizationComboBox.selectedItem).text,
 			not passwordSwitchAndLabel.switch.state and passwordInput.text,
-			wallpapersSwitchAndLabel.switch.state,
+			wallpapersSwitchAndLabel.switch.state
 		)
 	end)
 
